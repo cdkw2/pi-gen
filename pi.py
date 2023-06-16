@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[17]:
+# In[28]:
 
 
 import time
@@ -45,46 +45,47 @@ def fun_9():
 
 def display_realtime_pi(pi_digits):
     idx = 0
-    while True:
-        digit = pi_digits[idx]
-        print(f"\r... {digit} ...", end="")
-        if digit == "0":
-            fun_0()
-        elif digit == "1":
-            fun_1()
-        elif digit == "2":
-            fun_2()
-        elif digit == "3":
-            fun_3()
-        elif digit == "4":
-            fun_4()
-        elif digit == "5":
-            fun_5()
-        elif digit == "6":
-            fun_6()
-        elif digit == "7":
-            fun_7()
-        elif digit == "8":
-            fun_8()
-        elif digit == "9":
-            fun_9()
-        idx = (idx + 1) % len(pi_digits)
-        time.sleep(4)
+    try:
+        while True:
+            digit = pi_digits[idx]
+            print(f"\r... {digit} ...", end="")
+            if digit == "0":
+                fun_0()
+            elif digit == "1":
+                fun_1()
+            elif digit == "2":
+                fun_2()
+            elif digit == "3":
+                fun_3()
+            elif digit == "4":
+                fun_4()
+            elif digit == "5":
+                fun_5()
+            elif digit == "6":
+                fun_6()
+            elif digit == "7":
+                fun_7()
+            elif digit == "8":
+                fun_8()
+            elif digit == "9":
+                fun_9()
+            idx = (idx + 1) % len(pi_digits)
+            time.sleep(4)
+    except KeyboardInterrupt:
+        print("\nProgram interrupted. Exiting...")
 
 pi_digits = calculate_pi()
 display_realtime_pi(pi_digits)
 
-########## Best code yet!!!!
 
-
-# In[2]:
+# In[29]:
 
 
 import mpmath
 import time
 
 def generate_pi_digits():
-    mpmath.mp.dps = 9999  # Precission
+    mpmath.mp.dps = 9999  # Precision
     pi_str = str(mpmath.pi)
     pi_digits = [int(digit) for digit in pi_str[2:]]  # Convert to an integer and remove the 3. from pi string
     return pi_digits
@@ -92,27 +93,30 @@ def generate_pi_digits():
 def print_realtime_pi(num_digits, update_interval):
     pi_digits = generate_pi_digits()
     pointer_position = 0
-    left_padding = " " * (3 * (num_digits // 2))  # Google code
+    left_padding = " " * (3 * (num_digits // 2))  # Custom code
 
-    while True:
-        # Prepare the line to print
-        line = " |".join(str(digit) for digit in pi_digits[pointer_position:pointer_position + num_digits])
-        pointer = left_padding + "^"  # Pointer
+    try:
+        while True:
+            # Prepare the line to print
+            line = " |".join(str(digit) for digit in pi_digits[pointer_position:pointer_position + num_digits])
+            pointer = left_padding + "^"  # Pointer
 
-        # Clear the previous line and print the new line with the pointer
-        print("\r" + line + "\n" + pointer) #Doesn't work LOL!
+            # Clear the previous line and print the new line with the pointer
+            print("\033[F" + line + "\n\033[F" + pointer) # Move the cursor up and print the new line
 
-        # Update pointer position
-        pointer_position = (pointer_position + 1) % len(pi_digits)
+            # Update pointer position
+            pointer_position = (pointer_position + 1) % len(pi_digits)
 
-        # Time in between new digits
-        time.sleep(update_interval)
+            # Time in between new digits
+            time.sleep(update_interval)
+    except KeyboardInterrupt:
+        print("\nProgram interrupted. Exiting...")
 
 # 7 digits of pi every 0.5 second
 print_realtime_pi(7, 0.5)
 
 
-# In[12]:
+# In[27]:
 
 
 import time
@@ -137,14 +141,17 @@ def display_realtime_pi(pi_digits):
         "8": "It's an 8",
         "9": "It's a 9"
     }
-    while True:
-        digit = pi_digits[idx]
-        message = f"\r... {digit} ..."
-        if digit in digit_messages:
-            message += f"    {digit_messages[digit]}"
-        print(message + "        ", end="")
-        idx = (idx + 1) % len(pi_digits)
-        time.sleep(1.5)
+    try:
+        while True:
+            digit = pi_digits[idx]
+            message = f"\r... {digit} ..."
+            if digit in digit_messages:
+                message += f"\n{digit_messages[digit]}"
+            print(message, end="")
+            idx = (idx + 1) % len(pi_digits)
+            time.sleep(1.5)
+    except KeyboardInterrupt:
+        print("\nProgram interrupted. Exiting...")
 
 pi_digits = calculate_pi()
 display_realtime_pi(pi_digits)
