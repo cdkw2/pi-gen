@@ -1,6 +1,7 @@
 # Real-time Pi Digits Printer
 
 This Python program prints the digits of π (pi) in real-time, displaying a sliding window of digits with a stationary pointer.
+The .ipynb file gets updated regularly after making changes but the .py file gets updated at the end of my coding hours, because I code primarly in jupyter notebook and keep on pushing the files to GitHub as I make small changes (I know it is not the best and can be improved but it is what it is) and when I am off for the day I just download it as .py and upload them to this repository. So yeah, that's how this works. Contact me if yu want to use my code! Read the MIT License below!
 
 ## Prerequisites
 
