@@ -4,6 +4,7 @@
 This Python program prints the digits of π (pi) in real-time.
 
 This project is inspired by: 
+
 [![](https://yt3.ggpht.com/Ix1t-egztS9ShZu47IHd2crBzrwd3xeXBQ0nW-Del_Gw0Pw51Bli23K3wjJCpjdawlGI_qW8=s48-c-k-c0x00ffffff-no-rj)](https://www.youtube.com/@winningsequence)
 [WinningSequence's](https://www.youtube.com/@winningsequence) "CAN THE NUMBER π BEAT POKÉMON?" where the number π controls Pokémon Sapphire via its digits. Which is streamed live on [twitch](https://www.twitch.tv/winningsequence). I wanted to make something similar to this with some different games, so naturally I asked for the source code on the stream and left a comment on the latest video from the channel. After getting no response I just decided to make it myself! So here I am trying to do something that I actually like in my summer holidays. My predictions are that this project would be ready in about a two weeks from now that is roughly 31st of June, 2023. The project started on 7th of June, 2023 for context.
 
