@@ -12,7 +12,7 @@ This Python program prints the digits of π (pi) in real-time, displaying a slid
 1. Clone the repository or download the `pi.py` file.
 2. Open a terminal or command prompt.
 3. Navigate to the directory where the `pi.py` file is located.
-4. Run the program using the following command:
+4. Run the program.
 5. The program will start printing the digits of π in real-time, with a sliding window of digits and a stationary pointer.
 6. By default, it will display the next 7 digits of π and update every second. You can modify the num_digits and update_interval parameters in the code to adjust the number of digits and the update interval.
 
